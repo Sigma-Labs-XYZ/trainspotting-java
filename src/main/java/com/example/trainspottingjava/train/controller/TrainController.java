@@ -12,17 +12,14 @@ public class TrainController {
 
     private final TrainRepository trainRepository;
 
-    private List<Train> trains;
-
     public TrainController(TrainRepository trainRepository){
         this.trainRepository = trainRepository;
-        this.trains = new ArrayList<>();
 
     }
 
     @GetMapping("/Trains")
     public List<Train> getAllTrains(){
-        trains = trainRepository.findAllByOrderByName().buffer().blockFirst();
+        List<Train> trains = trainRepository.findAllByOrderByName().buffer().blockFirst();
         return trains;
     }
 }
