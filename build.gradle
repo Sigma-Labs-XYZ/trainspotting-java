@@ -16,8 +16,10 @@ repositories {
 }
 
 dependencies {
+    implementation platform("com.google.cloud:spring-cloud-gcp-dependencies:4.8.0")
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation('com.google.cloud:spring-cloud-gcp-starter-data-firestore')
 }
 
 tasks.named('test') {
