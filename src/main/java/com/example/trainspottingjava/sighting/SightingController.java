@@ -13,8 +13,10 @@ import java.lang.reflect.Array;
 public class SightingController {
 
 
+
+    // Not sure if this should be returning something or not
     @PostMapping("/sightings")
-    public void saveSighting(@RequestBody Train train, Station station, String time){ // maybe should return something (the train object?)
+    public void saveSighting(@RequestBody Train train, Station station, String time){
         System.out.println(train.getTrainId());
         System.out.println(train.getName());
         System.out.println(train.getColour());
