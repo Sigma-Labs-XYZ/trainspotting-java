@@ -1,6 +1,6 @@
 package com.example.trainspottingjava.sighting;
 
-import com.example.trainspottingjava.station.Station;
+import com.example.trainspottingjava.station.model.Station;
 import com.example.trainspottingjava.train.model.Train;
 
 public class Sighting {

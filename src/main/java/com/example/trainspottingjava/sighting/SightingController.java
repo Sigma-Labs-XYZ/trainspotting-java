@@ -1,13 +1,10 @@
 package com.example.trainspottingjava.sighting;
 
-import com.example.trainspottingjava.station.Station;
-import com.example.trainspottingjava.train.Train;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.example.trainspottingjava.station.model.Station;
+import com.example.trainspottingjava.train.model.Train;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.lang.reflect.Array;
 
 @RestController
 public class SightingController {
@@ -17,7 +14,7 @@ public class SightingController {
     // Not sure if this should be returning something or not
     @PostMapping("/sightings")
     public void saveSighting(@RequestBody Train train, Station station, String time){
-        System.out.println(train.getTrainId());
+        System.out.println(train.getId());
         System.out.println(train.getName());
         System.out.println(train.getColour());
         System.out.println(train.getTrainNumber());
