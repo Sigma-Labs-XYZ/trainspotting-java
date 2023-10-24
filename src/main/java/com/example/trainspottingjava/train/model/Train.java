@@ -11,6 +11,13 @@ public class Train {
     private String colour;
     private int trainNumber;
 
+    public Train(String id, String name, String colour, int trainNumber) {
+        this.id = id;
+        this.name = name;
+        this.colour = colour;
+        this.trainNumber = trainNumber;
+    }
+
     public String getId(){
         return id;
     }
