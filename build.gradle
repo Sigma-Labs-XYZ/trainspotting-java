@@ -20,6 +20,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation('com.google.cloud:spring-cloud-gcp-starter-data-firestore')
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:3.9.0'
 }
 
 tasks.named('test') {
