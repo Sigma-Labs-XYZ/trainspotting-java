@@ -21,6 +21,8 @@ public class Sighting {
         this.timestamp = timestamp;
     }
 
+    public Sighting() {
+    }
 
     public Station getStation() {
         return station;
