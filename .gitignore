@@ -1,0 +1,13 @@
+src/main/resources/key.json
+
+#Gradle
+.gradle/
+build/
+
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
