@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    gcp:
+      credentials:
+        location: classpath:key.json
+      firestore:
+        project-id: large-fruit-company
