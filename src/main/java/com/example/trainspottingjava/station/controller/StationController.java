@@ -26,11 +26,16 @@ public class StationController {
 
     @PostMapping("/Stations")
     public void addStation(@RequestBody String stationName){
-        //add logic to check if station is already there.
 
-        //if not:
+        List<Station> stations = stationRepository.findAllByOrderByName().buffer().blockFirst();
         Station newStation = new Station();
-        newStation.setName(stationName);
-        this.stationRepository.save(newStation).block();
+
+
+        if (stations == null || stations.stream().noneMatch(s -> s.getName().equals(stationName))) {
+            newStation.setName(stationName);
+            this.stationRepository.save(newStation).block();
+        }
+        //maybe this should return some kind of message instead of silently doing nothing?
+
     }
 }
