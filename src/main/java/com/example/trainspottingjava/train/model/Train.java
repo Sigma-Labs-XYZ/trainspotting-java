@@ -6,17 +6,17 @@ import com.google.cloud.spring.data.firestore.Document;
 public class Train {
 
     @DocumentId
-    private String id;
+    private String trainId;
     private String name;
     private String colour;
     private int trainNumber;
 
     public String getTrainId(){
-        return id;
+        return trainId;
     }
 
     public void setId(String id){
-        this.id = id;
+        this.trainId = id;
     }
 
     public String getName(){
