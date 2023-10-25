@@ -1,6 +1,10 @@
 package com.example.trainspottingjava.sighting;
 
+<<<<<<< HEAD
 import com.example.trainspottingjava.station.model.Station;
+=======
+import com.example.trainspottingjava.station.Station;
+>>>>>>> main
 import com.example.trainspottingjava.train.model.Train;
 
 public class SightingPostBody {
