@@ -2,7 +2,7 @@ package com.example.trainspottingjava.train.model;
 import com.google.cloud.firestore.annotation.DocumentId;
 import com.google.cloud.spring.data.firestore.Document;
 
-@Document(collectionName = "Train")
+@Document(collectionName = "JavaTrain")
 public class Train {
 
     @DocumentId
