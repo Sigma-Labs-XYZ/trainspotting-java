@@ -11,7 +11,7 @@ public class Sighting {
     public Sighting(String trainId, String name, String colour, int trainNumber, String stationID, String stationName, String time) {
 
         this.station = new Station(stationID, stationName);
-        this.train = new Train(trainId, name, colour, trainNumber);
+        this.train = new Train();
         this.timestamp = time;
     }
 

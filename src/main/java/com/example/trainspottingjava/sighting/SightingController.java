@@ -14,7 +14,7 @@ public class SightingController {
 
     @PostMapping("/sightings")
     public void saveSighting(@RequestBody PostBody postBody){
-        Train train = new Train(postBody.getTrainId(), postBody.getName(), postBody.getColour(), postBody.getTrainNumber());
+        Train train = new Train();
         Station station = new Station(postBody.getStationID(), postBody.getStationName());
         String time = postBody.getTime();
 
