@@ -2,25 +2,26 @@ package com.example.trainspottingjava.sighting.model;
 
 import com.example.trainspottingjava.station.Station;
 import com.example.trainspottingjava.train.model.Train;
+import com.google.cloud.firestore.annotation.DocumentId;
+import com.google.cloud.spring.data.firestore.Document;
 
+@Document(collectionName = "JavaSighting")
 public class Sighting {
+
+    @DocumentId
+    private String id;
     private Station station;
     private Train train;
     private String timestamp; //later this will be datetime object
 
-    public Sighting(String trainId, String name, String colour, int trainNumber, String stationID, String stationName, String time) {
 
-        this.station = new Station(stationID, stationName);
-        this.train = new Train();
-        this.timestamp = time;
+    public String getId() {
+        return id;
     }
 
-    public Sighting(Station station, Train train, String timestamp) {
-        this.station = station;
-        this.train = train;
-        this.timestamp = timestamp;
+    public void setId(String id) {
+        this.id = id;
     }
-
 
     public Station getStation() {
         return station;
