@@ -1,7 +1,7 @@
 package com.example.trainspottingjava.sighting;
 
 import com.example.trainspottingjava.station.Station;
-import com.example.trainspottingjava.train.Train;
+import com.example.trainspottingjava.train.model.Train;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

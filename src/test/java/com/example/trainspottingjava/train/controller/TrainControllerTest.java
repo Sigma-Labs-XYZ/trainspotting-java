@@ -60,7 +60,7 @@ public class TrainControllerTest {
         assertEquals(expectedTrains.size(), result.size());
 
         for (int i = 0; i < expectedTrains.size(); i++) {
-            assertEquals(expectedTrains.get(i).getId(), result.get(i).getId());
+            assertEquals(expectedTrains.get(i).getTrainId(), result.get(i).getTrainId());
             assertEquals(expectedTrains.get(i).getName(), result.get(i).getName());
             assertEquals(expectedTrains.get(i).getColour(), result.get(i).getColour());
             assertEquals(expectedTrains.get(i).getTrainNumber(), result.get(i).getTrainNumber());
