@@ -1,13 +1,10 @@
 package com.example.trainspottingjava.sighting;
 
-<<<<<<< HEAD
+
 import com.example.trainspottingjava.station.model.Station;
 import com.example.trainspottingjava.train.model.Train;
-=======
-import com.example.trainspottingjava.station.Station;
-import com.example.trainspottingjava.train.model.Train;
-import org.springframework.web.bind.annotation.GetMapping;
->>>>>>> main
+
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
