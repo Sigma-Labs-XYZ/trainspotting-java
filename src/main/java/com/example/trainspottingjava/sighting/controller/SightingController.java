@@ -1,8 +1,9 @@
 package com.example.trainspottingjava.sighting.controller;
 
-import com.example.trainspottingjava.sighting.model.CreateSightingRequest;
-import com.example.trainspottingjava.station.model.Station;
-import com.example.trainspottingjava.train.model.Train;
+import com.example.trainspottingjava.sighting.model.Sighting;
+import com.example.trainspottingjava.sighting.repository.SightingRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,16 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SightingController {
 
+    private final SightingRepository sightingRepository;
 
-
+    public SightingController(SightingRepository sightingRepository){
+        this.sightingRepository = sightingRepository;
+    }
 
     @PostMapping("/sightings")
-    public void saveSighting(@RequestBody CreateSightingRequest postBody){
-        Train train = new Train();
-        Station station = new Station();
-        String time = postBody.getTime();
+    public ResponseEntity<Sighting> saveSighting(@RequestBody Sighting sighting){
 
-        System.out.println(train.getColour());
-        System.out.println(station.getName());
+
+        return new ResponseEntity<Sighting>(sighting, HttpStatus.CREATED);
     }
 }

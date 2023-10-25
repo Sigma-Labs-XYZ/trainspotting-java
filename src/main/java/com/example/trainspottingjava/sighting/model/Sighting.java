@@ -14,6 +14,11 @@ public class Sighting {
     private Train train;
     private String timestamp; //later this will be datetime object
 
+    public Sighting(Station station, Train train, String timestamp) {
+        this.station = station;
+        this.train = train;
+        this.timestamp = timestamp;
+    }
 
     public String getId() {
         return id;
