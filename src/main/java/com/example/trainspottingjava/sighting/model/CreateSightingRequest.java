@@ -1,6 +1,6 @@
-package com.example.trainspottingjava.sighting;
+package com.example.trainspottingjava.sighting.model;
 
-public class PostBody {
+public class CreateSightingRequest {
     private final String trainId;
     private final String name;
     private final String colour;
@@ -10,7 +10,7 @@ public class PostBody {
     private final String time;
 
 
-    public PostBody(String trainId, String name, String colour, int trainNumber, String stationID, String stationName, String time) {
+    public CreateSightingRequest(String trainId, String name, String colour, int trainNumber, String stationID, String stationName, String time) {
         this.trainId = trainId;
         this.name = name;
         this.colour = colour;

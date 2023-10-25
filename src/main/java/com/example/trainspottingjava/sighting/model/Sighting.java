@@ -1,4 +1,4 @@
-package com.example.trainspottingjava.sighting;
+package com.example.trainspottingjava.sighting.model;
 
 import com.example.trainspottingjava.station.Station;
 import com.example.trainspottingjava.train.model.Train;

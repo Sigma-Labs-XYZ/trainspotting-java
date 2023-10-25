@@ -1,5 +1,6 @@
-package com.example.trainspottingjava.sighting;
+package com.example.trainspottingjava.sighting.controller;
 
+import com.example.trainspottingjava.sighting.model.CreateSightingRequest;
 import com.example.trainspottingjava.station.Station;
 import com.example.trainspottingjava.train.model.Train;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +14,7 @@ public class SightingController {
 
 
     @PostMapping("/sightings")
-    public void saveSighting(@RequestBody PostBody postBody){
+    public void saveSighting(@RequestBody CreateSightingRequest postBody){
         Train train = new Train();
         Station station = new Station(postBody.getStationID(), postBody.getStationName());
         String time = postBody.getTime();
