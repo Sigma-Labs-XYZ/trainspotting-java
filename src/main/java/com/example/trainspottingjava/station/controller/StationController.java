@@ -1,8 +1,11 @@
 package com.example.trainspottingjava.station.controller;
 
+import com.example.trainspottingjava.station.model.CreateStationRequest;
 import com.example.trainspottingjava.station.model.Station;
 import com.example.trainspottingjava.station.repository.StationRepository;
 import com.example.trainspottingjava.train.model.Train;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,18 +27,26 @@ public class StationController {
         return stations;
     }
 
-    @PostMapping("/Stations")
-    public void addStation(@RequestBody String stationName){
+    //return station object with new id (201 status code = created)
+    @PostMapping(value = "/Stations", consumes = {"application/json"})
+    public ResponseEntity<Station> addStation(@RequestBody CreateStationRequest stationRequest){
+        //java validation api
 
         List<Station> stations = stationRepository.findAllByOrderByName().buffer().blockFirst();
-        Station newStation = new Station();
+        String newStationName = stationRequest.getStationName();
 
 
-        if (stations == null || stations.stream().noneMatch(s -> s.getName().equals(stationName))) {
-            newStation.setName(stationName);
+
+        if (stations == null || stations.stream().noneMatch(s -> s.getName().equals(newStationName))) {
+            Station newStation = stationRequest.makeNewStation();
+            newStation.setName(newStationName);
             this.stationRepository.save(newStation).block();
+            return new ResponseEntity<>(newStation, HttpStatus.CREATED);
         }
-        //maybe this should return some kind of message instead of silently doing nothing?
+        //if a match was found:
+        Station errorStation = new Station();
+        errorStation.setName("Already Created");
+        return new ResponseEntity<>(errorStation, HttpStatus.CONFLICT);
 
     }
 }
