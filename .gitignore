@@ -1,5 +1,5 @@
 src/main/resources/key.json
-
+out/
 #Gradle
 .gradle/
 build/
