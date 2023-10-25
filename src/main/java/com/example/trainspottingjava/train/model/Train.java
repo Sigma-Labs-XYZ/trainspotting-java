@@ -11,7 +11,6 @@ public class Train {
     private String colour;
     private int trainNumber;
 
-
     public String getId(){
         return id;
     }
