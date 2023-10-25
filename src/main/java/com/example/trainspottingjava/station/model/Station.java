@@ -1,13 +1,14 @@
-package com.example.trainspottingjava.station;
+package com.example.trainspottingjava.station.model;
 
+import com.google.cloud.firestore.annotation.DocumentId;
+import com.google.cloud.spring.data.firestore.Document;
+
+@Document(collectionName = "JavaStation")
 public class Station {
+
+    @DocumentId
     private String id;
     private String name;
-
-    public Station(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public String getId() {
         return id;

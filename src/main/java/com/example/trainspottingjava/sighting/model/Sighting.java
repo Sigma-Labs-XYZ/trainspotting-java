@@ -1,6 +1,6 @@
 package com.example.trainspottingjava.sighting.model;
 
-import com.example.trainspottingjava.station.Station;
+import com.example.trainspottingjava.station.model.Station;
 import com.example.trainspottingjava.train.model.Train;
 import com.google.cloud.firestore.annotation.DocumentId;
 import com.google.cloud.spring.data.firestore.Document;
