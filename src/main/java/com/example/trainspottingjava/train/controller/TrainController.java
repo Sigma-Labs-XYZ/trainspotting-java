@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @RestController
-@RequestMapping("/trains")
+@RequestMapping("/train")
 public class TrainController {
 
     private final TrainRepository trainRepository;
