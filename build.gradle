@@ -20,6 +20,7 @@ test {
         events "passed", "skipped", "failed", "standardOut", "standardError"
     }
 }
+
 dependencies {
     implementation platform("com.google.cloud:spring-cloud-gcp-dependencies:4.8.0")
     implementation 'org.springframework.boot:spring-boot-starter-web'
