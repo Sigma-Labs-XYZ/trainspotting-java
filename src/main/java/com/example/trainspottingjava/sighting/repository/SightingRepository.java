@@ -6,4 +6,5 @@ import reactor.core.publisher.Flux;
 
 public interface SightingRepository extends FirestoreReactiveRepository<Sighting> {
     Flux<Sighting> findAllByOrderByStation();
+    Flux<Sighting> findByTrain_NameAndTrain_Colour(String name, String colour);
 }

@@ -1,6 +1,8 @@
 package com.example.trainspottingjava.train.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import com.example.trainspottingjava.sighting.repository.SightingRepository;
 import com.example.trainspottingjava.train.model.Train;
 import com.example.trainspottingjava.train.repository.TrainRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,13 +21,16 @@ public class TrainControllerTest {
 
     @Mock
     private TrainRepository trainRepository;
+    @Mock
+    private SightingRepository sightingRepository;
 
     private TrainController trainController;
+
 
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        trainController = new TrainController(trainRepository);
+        trainController = new TrainController(trainRepository, sightingRepository);
     }
 
     @Test
