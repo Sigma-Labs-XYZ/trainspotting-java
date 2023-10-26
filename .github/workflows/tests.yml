@@ -16,12 +16,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       
-      - name: Set up JDK
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
-          distribution: oracle
-      
+          java-version: '17.0.8'
+          distribution: 'temurin'
+          cache: gradle
 
-      - name: run tests
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Test with Gradle
         run: ./gradlew test
