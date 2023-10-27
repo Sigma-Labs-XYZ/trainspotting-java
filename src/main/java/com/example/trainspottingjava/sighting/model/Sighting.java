@@ -2,8 +2,13 @@ package com.example.trainspottingjava.sighting.model;
 
 import com.example.trainspottingjava.station.model.Station;
 import com.example.trainspottingjava.train.model.Train;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.google.cloud.firestore.annotation.DocumentId;
 import com.google.cloud.spring.data.firestore.Document;
+
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 @Document(collectionName = "JavaSighting")
 public class Sighting {
@@ -12,12 +17,21 @@ public class Sighting {
     private String id;
     private Station station;
     private Train train;
-    private String timestamp; //later this will be datetime object
 
-    public Sighting(Station station, Train train, String timestamp) {
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm")
+    private Date timestamp; //later this will be datetime object
+
+    public Sighting() {
+
+    }
+
+    public Sighting(Station station, Train train, LocalDateTime timestamp) {
         this.station = station;
         this.train = train;
-        this.timestamp = timestamp;
+        this.timestamp = java.util.Date
+                .from(timestamp.atZone(ZoneId.systemDefault())
+                        .toInstant());
+
     }
 
     public String getId() {
@@ -44,11 +58,11 @@ public class Sighting {
         this.train = train;
     }
 
-    public String getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 }

@@ -14,7 +14,7 @@ public class SightingService {
 
     public void confirmTrainID(Sighting sighting, TrainRepository trainRepository){
 
-        String trainID = sighting.getTrain().getId();
+        String trainID = sighting.getTrain().getTrainId();
         int trainNum = sighting.getTrain().getTrainNumber();
         List<Train> trains = trainRepository.findAllByOrderByName().buffer().blockFirst();
 
@@ -29,10 +29,10 @@ public class SightingService {
             //then set the ID   (for now I'm assuming the other data is correct, but some validation here would be good)
 
             if (matchingTrain == null) { // If the train does not exist, add it.
-                String newId = trainRepository.save(sighting.getTrain()).block().getId();
+                String newId = trainRepository.save(sighting.getTrain()).block().getTrainId();
                 sighting.getTrain().setId(newId);
             } else {
-                sighting.getTrain().setId(matchingTrain.getId());
+                sighting.getTrain().setId(matchingTrain.getTrainId());
             }
         } else { //if train does have id already
             //  TODO If I have time, we should check if that id exists in the db and if not reassign
