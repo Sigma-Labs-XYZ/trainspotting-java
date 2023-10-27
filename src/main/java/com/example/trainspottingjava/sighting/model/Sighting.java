@@ -19,7 +19,7 @@ public class Sighting {
     private Train train;
 
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm")
-    private Date timestamp; //later this will be datetime object
+    private Date timestamp;
 
     public Sighting() {
 
