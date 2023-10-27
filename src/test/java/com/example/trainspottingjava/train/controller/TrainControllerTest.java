@@ -26,7 +26,7 @@ public class TrainControllerTest {
 
     @MockBean
     private TrainRepository trainRepository;
-    @Mock
+    @MockBean
     private SightingRepository sightingRepository;
 
 
